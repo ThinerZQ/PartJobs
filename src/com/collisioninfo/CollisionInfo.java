@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * this class can be used to read file and call CollisionList to get a series of computing info and final write the result to file
+ *
  * @author wenyi shen
  * @version 1.0
  */
@@ -13,18 +14,19 @@ public class CollisionInfo {
 
     /**
      * this is the main method that process inputStream and call CollisionList to get a series of task and write the information to file
+     *
      * @param args your input file and  end with .csv
      */
     public static void main(String[] args) {
 
-        if(args.length==0){
+        if (args.length == 0) {
             System.out.println("Error: missing name of the input file");
             System.exit(0);
-        }else{
+        } else {
             for (String path : args) {
                 System.out.println(path);
 
-                if(!path.endsWith(".csv")){
+                if (!path.endsWith(".csv")) {
                     System.out.println("it is not a csv file");
                     System.exit(0);
                 }
@@ -77,19 +79,19 @@ public class CollisionInfo {
                     String mostDangerousCyclist = collisionList.findTheThreeZipCodesThatAreMostDangerousForTheCyclists(collisionArrayList);
                     String percentge = collisionList.findThePercentageOfCollisionsInvolvingTheFollowingVehicleTypes(collisionArrayList);
 
-                    String pathname = path.substring(0,path.length()-4);
-                    String outFileName =pathname+".out";
+                    String pathname = path.substring(0, path.length() - 4);
+                    String outFileName = pathname + ".out";
 
                     File outputFile = new File(outFileName);
 
-                    try{
-                        if (!outputFile.exists()){
+                    try {
+                        if (!outputFile.exists()) {
                             outputFile.createNewFile();
                         }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         System.out.println("Error: cannot create file :" + outFileName);
                     }
-                    FileWriter fileWriter = new FileWriter(outputFile,false);
+                    FileWriter fileWriter = new FileWriter(outputFile, false);
                     fileWriter.write(largestCollision);
                     fileWriter.write(smallCollisions);
                     fileWriter.write(mostInjuries);
@@ -97,7 +99,7 @@ public class CollisionInfo {
                     fileWriter.write(percentge);
                     fileWriter.close();
                 } catch (FileNotFoundException ex) {
-                    System.out.println("Error: file " + path+" does not exist");
+                    System.out.println("Error: file " + path + " does not exist");
                 } catch (IOException ex) {
                     System.out.println("read file:" + path + " error! ");
                 }

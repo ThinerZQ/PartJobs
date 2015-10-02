@@ -2,8 +2,9 @@ package com.collisioninfo;
 
 /**
  * tthis class is a entity bean  of Collision information
+ *
  * @author wenyi shen
- * @version  1.0
+ * @version 1.0
  */
 
 public class Collision {

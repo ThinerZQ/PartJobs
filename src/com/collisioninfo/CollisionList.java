@@ -7,8 +7,9 @@ import java.util.HashSet;
 
 /**
  * this class provide five method ,they can computing that five task.
+ *
  * @author wenyi shen
- * @version  1.0
+ * @version 1.0
  */
 
 
@@ -16,10 +17,11 @@ public class CollisionList {
 
     /**
      * this method is Find the three zip codes with the largest number of collisions
+     *
      * @param collisions a ArrayList of Collision
      * @return a series of three zip codes with the largest number of collisions
      */
-    public String  findTheThreeZipCodesWithTheLargestNumberOfCollisions(ArrayList<Collision> collisions) {
+    public String findTheThreeZipCodesWithTheLargestNumberOfCollisions(ArrayList<Collision> collisions) {
 
         HashSet<String> zipcodes = new HashSet<>();
         for (Collision collision : collisions) {
@@ -64,16 +66,18 @@ public class CollisionList {
         for (j = 0; j < max.length; j++) {
             for (i = 0; i < count1.length; i++) {
                 if (count1[i] == max[j]) {
-                    stringBuilder.append("         "+zip[i] + "       " + count1[i] + "  collisions\n");
+                    stringBuilder.append("         " + zip[i] + "       " + count1[i] + "  collisions\n");
                 }
             }
         }
-       return stringBuilder.toString();
+        return stringBuilder.toString();
 
 
     }
+
     /**
      * this method is Find the three zip codes with the smallest number of collisions
+     *
      * @param collisions a ArrayList of Collision
      * @return a series of three zip codes with the smallest number of collisions
      */
@@ -123,15 +127,17 @@ public class CollisionList {
         for (j = min.length - 1; j >= 0; j--) {
             for (i = 0; i < count1.length; i++) {
                 if (count1[i] == min[j]) {
-                    stringBuilder.append("         "+zip[i] + "       " + count1[i] + "  collisions\n");
+                    stringBuilder.append("         " + zip[i] + "       " + count1[i] + "  collisions\n");
                 }
             }
         }
-       return stringBuilder.toString();
+        return stringBuilder.toString();
     }
+
     /**
      * Find the three zip codes that have the most injuries and fatalities resulting from vehicle collisions (overall for all persons
-     involved).
+     * involved).
+     *
      * @param collisions a ArrayList of Collision
      * @return a series of three zip codes with the most injuries and fatalities resulting
      */
@@ -190,7 +196,7 @@ public class CollisionList {
         for (j = 0; j < max.length; j++) {
             for (i = 0; i < count1.length; i++) {
                 if (count1[i] == max[j]) {
-                    stringBuilder.append("         "+zip[i] + "       " + count1[i] + "  injuries and fatalities \n");
+                    stringBuilder.append("         " + zip[i] + "       " + count1[i] + "  injuries and fatalities \n");
                 }
             }
         }
@@ -199,6 +205,7 @@ public class CollisionList {
 
     /**
      * Find the three zip codes that are most dangerous for the cyclists (i.e., the number of cyclist injuries and fatalities is the largest).
+     *
      * @param collisions a ArrayList of Collision
      * @return a series of three zip codes with the most dangerous for the cyclists
      */
@@ -252,21 +259,21 @@ public class CollisionList {
         for (j = 0; j < max.length; j++) {
             for (i = 0; i < count1.length; i++) {
                 if (count1[i] == max[j]) {
-                    stringBuilder.append("         "+zip[i] + "       " + count1[i] + " cyclists hurt \n");
+                    stringBuilder.append("         " + zip[i] + "       " + count1[i] + " cyclists hurt \n");
                 }
             }
         }
-       return stringBuilder.toString();
+        return stringBuilder.toString();
     }
 
     /**
      * Find the percentage of collisions involving the following vehicle types:
-      taxi
-      bus
-      bicycle
-      fire truck
-      ambulance
-
+     * taxi
+     * bus
+     * bicycle
+     * fire truck
+     * ambulance
+     *
      * @param collisions a ArrayList of Collision
      * @return a series of percentage of five vehicle types
      */
@@ -293,18 +300,18 @@ public class CollisionList {
 
         System.out.println(taix + "" + collisions.size());
         DecimalFormat df = new DecimalFormat("0.00%");
-        double taixPercent = taix*1.0/collisions.size();
-        double busPercent = bus*1.0/collisions.size();
-        double bicyclePercent = bicycle*1.0/collisions.size();
-        double firetruckPercent = firetruck*1.0/collisions.size();
-        double ambulancePercent = ambulance*1.0/collisions.size();
-        stringBuilder.append("          taix    "+  "   "+df.format(taixPercent)+"\n");
-        stringBuilder.append("          bus    "+  "   "+df.format(busPercent)+"\n");
-        stringBuilder.append("          bicycle    "+  "   "+df.format(bicyclePercent)+"\n");
-        stringBuilder.append("          fire truck    "+  "   "+df.format(firetruckPercent)+"\n");
-        stringBuilder.append("          ambulance    "+  "   "+df.format(ambulancePercent)+"\n");
+        double taixPercent = taix * 1.0 / collisions.size();
+        double busPercent = bus * 1.0 / collisions.size();
+        double bicyclePercent = bicycle * 1.0 / collisions.size();
+        double firetruckPercent = firetruck * 1.0 / collisions.size();
+        double ambulancePercent = ambulance * 1.0 / collisions.size();
+        stringBuilder.append("          taix    " + "   " + df.format(taixPercent) + "\n");
+        stringBuilder.append("          bus    " + "   " + df.format(busPercent) + "\n");
+        stringBuilder.append("          bicycle    " + "   " + df.format(bicyclePercent) + "\n");
+        stringBuilder.append("          fire truck    " + "   " + df.format(firetruckPercent) + "\n");
+        stringBuilder.append("          ambulance    " + "   " + df.format(ambulancePercent) + "\n");
 
-       return  stringBuilder.toString();
+        return stringBuilder.toString();
     }
 
 }
