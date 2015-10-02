@@ -6,5 +6,17 @@ package com.game;
 public class Poker {
     public static void main(String[] args){
 
+
+        if(args.length==0){
+
+        }else if(args.length >5){
+
+        }else {
+
+        }
+
+
+
+
     }
 }
