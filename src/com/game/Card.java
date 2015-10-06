@@ -1,8 +1,5 @@
 package com.game;
 
-/**
- * Created by zhengshouzi on 2015/10/2.
- */
 public class Card {
 
     private Number number;
